@@ -1,0 +1,28 @@
+<div ng-repeat="book in bookCtl.products">
+<h2>{{book.titulo}} #{{id}}</h2>
+	<div class="row"></div><br>
+	<div class="col-md-12">
+		<img class="im-responsive" ng-src="{{book.imagenes[0].url}}">
+	</div>
+	<div class="col-md-8 .bg-primary">
+		<p class="">{{book.descripcion}}</p>
+	</div>
+	<div class="col-md-4">
+		<h4 class="text-primary">Editorial</h4>
+		<em class="text-warning">{{book.editorial}}</em>
+		<h4 class="text-primary">Autor</h4>
+		<em class="text-warning">{{book.autor}}</em>
+	</div>
+</div>
+
+<h2 class="text-danger">{{book.titulo}} #{{id}}</h2>
+
+
+<p><img ng-src="{{book.img}}" width="10" height="20" ><br><br>
+	<p class="">{{book.descripcion}}</p>
+	<strong>Editorial   </strong>
+	<em class="text-warning"> {{book.editorial}}</em><br>
+	<strong>Autor   </strong>
+	<em class="text-warning">{{book.autor}}</em><br><br>
+
+<a href="/libros" class="btn btn-primary btn-lg active btn-block" role="button">Regresar</a>

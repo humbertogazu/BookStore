@@ -1,0 +1,39 @@
+<a ui-sref="dashboard" class="btn btn-muted">Dashboard</a>
+
+<p>
+	<strong>Buscar</strong><br>
+
+	Titulo: <input ng-model="query.titulo">
+
+
+	<strong>Ordenar</strong>
+	<select ng-model="orderField">
+	 	<option value="titulo">Titulo</option>
+	    <option value="editorial">Editorial</option>
+	</select>
+   
+
+</p>
+<ul>
+    <li ng-repeat="book in bookCtl.products | filter:query | orderBy:orderField:orderReverse">
+		<div>
+			<div class="row"></div>
+			<div class="col-md-12">
+				<p class="pull-right">{{book.id}}</p>
+				<h1 class="text-danger"><em>{{book.titulo}}</em></h1>
+				<p class="">{{book.descripcion}}</p>
+				<div class="col-md-8 .bg-primary">
+				<img class="im-responsive" ng-src="{{book.imagenes[0].url}}">
+			</div>
+			</div>
+			
+			<div class="col-md-4">
+				<h4 class="text-primary">Editorial</h4>
+				<em class="text-warning">{{book.editorial}}</em>
+				<h4 class="text-primary">Autor</h4>
+				<em class="text-warning">{{book.autor}}</em>
+			</div>
+		</div>
+    </li>
+</ul>
+		
